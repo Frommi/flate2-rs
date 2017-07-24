@@ -55,6 +55,7 @@ pub type mz_alloc_func = extern fn(*mut c_void,
                                    size_t) -> *mut c_void;
 pub type mz_free_func = extern fn(*mut c_void, *mut c_void);
 
+#[link(name = "miniz_oxide")]
 extern {
     pub fn mz_deflateInit2(stream: *mut mz_stream,
                            level: c_int,

@@ -1,0 +1,3 @@
+[submodule "miniz-sys/miniz_oxide"]
+	path = miniz-sys/miniz_oxide
+	url = https://github.com/Frommi/miniz_oxide.git

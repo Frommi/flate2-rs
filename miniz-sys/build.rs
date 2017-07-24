@@ -1,8 +1,7 @@
-extern crate gcc;
-
-use std::env;
+use std::process::Command;
 
 fn main() {
-    gcc::compile_library("libminiz.a", &["miniz.c"]);
-    println!("cargo:root={}", env::var("OUT_DIR").unwrap());
+    Command::new("./miniz_oxide/build.sh").status().unwrap();
+    let out_dir = "miniz-sys/miniz_oxide";
+    println!("cargo:rustc-link-search=native={}", out_dir);
 }
