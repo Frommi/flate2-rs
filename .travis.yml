@@ -9,7 +9,6 @@ sudo: enabled
 before_script:
   - pip install 'travis-cargo<0.2' --user && export PATH=$HOME/.local/bin:$PATH
 script:
-  - export CARGO_TARGET_DIR=`pwd`/target
   - cargo build --verbose
   - rustdoc --test README.md -L target/debug/deps --extern flate2=target/debug/libflate2.rlib
   - cargo test --verbose
